@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GlowUp Empire Dresses</title>
+    <meta name="description" content="Shop available women's dresses from GlowUp Empire and place orders through WhatsApp.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script defer src="assets/js/store.js"></script>
+    <script defer src="assets/js/app.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="GlowUp Empire home">
+        <span class="brand-mark">GE</span>
+        <span>
+          <strong>GlowUp Empire</strong>
+          <small>Dresses</small>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#collection">Collection</a>
+        <a href="login.html">Login</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="store-hero" aria-labelledby="storeTitle">
+        <div class="hero-copy">
+          <p class="eyebrow">Fresh arrivals</p>
+          <h1 id="storeTitle">GlowUp Empire Dresses</h1>
+          <p class="hero-text">Browse available styles and send a ready-to-fill WhatsApp purchase message.</p>
+        </div>
+        <article class="spotlight" id="spotlight" aria-live="polite">
+          <div class="spotlight-image">
+            <img id="spotlightImage" src="assets/uploads/rose-wrap-midi.png" alt="Featured dress">
+          </div>
+          <div class="spotlight-body">
+            <p class="eyebrow">Featured</p>
+            <h2 id="spotlightName">Rose Wrap Midi Dress</h2>
+            <p id="spotlightPrice">GHS 180</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="collection" id="collection" aria-labelledby="collectionTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Shop the rack</p>
+            <h2 id="collectionTitle">Available Dresses</h2>
+          </div>
+          <p id="resultCount" class="result-count">Loading collection...</p>
+        </div>
+
+        <div class="shop-controls" aria-label="Catalogue controls">
+          <label class="field search-field">
+            <span>Search</span>
+            <span class="input-with-icon">
+              <i data-lucide="search" aria-hidden="true"></i>
+              <input id="searchInput" type="search" placeholder="Dress name or detail" autocomplete="off">
+            </span>
+          </label>
+          <label class="field">
+            <span>Sort</span>
+            <select id="sortSelect">
+              <option value="featured">Featured first</option>
+              <option value="price-low">Price: low to high</option>
+              <option value="price-high">Price: high to low</option>
+              <option value="name">Name</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="product-grid" id="productGrid" aria-live="polite"></div>
+        <div class="empty-state" id="emptyState" hidden>
+          <h3>No dresses found</h3>
+          <p>Try a different search or size filter.</p>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+      <div class="modal-backdrop" data-close-modal></div>
+      <article class="modal-panel product-modal-panel">
+        <button class="icon-button modal-close" type="button" data-close-modal aria-label="Close product details">
+          <i data-lucide="x" aria-hidden="true"></i>
+        </button>
+        <div class="modal-product-image">
+          <img id="modalImage" alt="">
+        </div>
+        <div class="modal-product-content">
+          <p class="eyebrow">Dress details</p>
+          <h2 id="modalTitle"></h2>
+          <p class="modal-price" id="modalPrice"></p>
+          <p id="modalDescription"></p>
+          <div class="detail-row">
+            <span>Available numeric sizes</span>
+            <div class="chip-row" id="modalSizes"></div>
+          </div>
+          <button class="primary-button" type="button" id="openOfferButton">
+            <i data-lucide="message-circle" aria-hidden="true"></i>
+            Place offer
+          </button>
+        </div>
+      </article>
+    </div>
+
+    <div class="modal" id="offerModal" role="dialog" aria-modal="true" aria-labelledby="offerTitle" hidden>
+      <div class="modal-backdrop" data-close-offer></div>
+      <article class="modal-panel offer-panel">
+        <button class="icon-button modal-close" type="button" data-close-offer aria-label="Close offer form">
+          <i data-lucide="x" aria-hidden="true"></i>
+        </button>
+        <p class="eyebrow">WhatsApp order</p>
+        <h2 id="offerTitle">Place your offer</h2>
+        <p class="selected-dress" id="selectedDressText"></p>
+        <form id="offerForm" class="form-grid">
+          <label class="field">
+            <span>Full name</span>
+            <input id="customerName" name="name" type="text" autocomplete="name" required>
+          </label>
+          <label class="field">
+            <span>Location</span>
+            <input id="customerLocation" name="location" type="text" autocomplete="street-address" required>
+          </label>
+          <label class="field">
+            <span>Hall, house, or room number</span>
+            <input id="customerRoom" name="room" type="text" autocomplete="address-line2">
+          </label>
+          <button class="primary-button full-width" type="submit">
+            <i data-lucide="send" aria-hidden="true"></i>
+            Continue on WhatsApp
+          </button>
+        </form>
+      </article>
+    </div>
+  </body>
+</html>
